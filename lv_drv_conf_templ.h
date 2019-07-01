@@ -102,6 +102,9 @@
 
 /*Different rendering might be used if running in a Virtual machine*/
 #  define MONITOR_VIRTUAL_MACHINE 0
+
+/*Open two windows to test multi display support*/
+#  define MONITOR_DUAL            0
 #endif
 
 /*-----------------------------------
@@ -113,8 +116,8 @@
 
 #define USE_WINDOWS         0
 #if USE_WINDOWS
-#  define WINDOW_HOR_RES      LV_HOR_RES
-#  define WINDOW_VER_RES      LV_VER_RES
+#  define WINDOW_HOR_RES      480
+#  define WINDOW_VER_RES      320
 #endif
 
 /*----------------
@@ -263,8 +266,6 @@
 
 #if USE_LIBINPUT
 #  define LIBINPUT_NAME   "/dev/input/event0"        /*You can use the "evtest" Linux tool to get the list of devices and test them*/
-#  define LV_HOR_SIZE     (120)                      /*Horizontal screen size in mm*/
-#  define LV_VER_SIZE     (78)                       /*Vertial screen size in mm*/
 #endif  /*USE_LIBINPUT*/
 
 /*-------------------------------------------------
