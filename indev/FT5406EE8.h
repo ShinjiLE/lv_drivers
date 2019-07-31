@@ -13,17 +13,19 @@ extern "C" {
 /*********************
  *      INCLUDES
  *********************/
+#ifndef LV_DRV_NO_CONF
 #ifdef LV_CONF_INCLUDE_SIMPLE
 #include "lv_drv_conf.h"
 #else
 #include "../../lv_drv_conf.h"
+#endif
 #endif
 
 #if USE_FT5406EE8
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "lvgl/lv_hal/lv_hal_indev.h"
+#include "lvgl/src/lv_hal/lv_hal_indev.h"
 
 /*********************
  *      DEFINES
