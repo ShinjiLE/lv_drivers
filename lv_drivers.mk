@@ -1,10 +1,5 @@
-include $(LVGL_DIR)/lv_drivers/display/display.mk
-include $(LVGL_DIR)/lv_drivers/indev/indev.mk
+LV_DRIVERS_PATH ?= ${shell pwd}/lv_drivers
 
+CSRCS += $(shell find $(LV_DRIVERS_PATH) -type f -name '*.c')
+CFLAGS += "-I$(LV_DRIVERS_PATH)"
 
-CSRCS += win_drv.c
-
-DEPPATH += --dep-path $(LVGL_DIR)/lv_drivers
-VPATH += :$(LVGL_DIR)/lv_drivers
-
-CFLAGS += "-I$(LVGL_DIR)/lv_drivers"

@@ -33,7 +33,7 @@
 
 #define FT5406EE8_FINGER_MAX 10
 
-/*Register adresses*/
+/*Register addresses*/
 #define FT5406EE8_REG_DEVICE_MODE 0x00
 #define FT5406EE8_REG_GEST_ID     0x01
 #define FT5406EE8_REG_TD_STATUS   0x02
@@ -78,7 +78,7 @@ void ft5406ee8_init(void)
  * @param data store the read data here
  * @return false: because no ore data to be read
  */
-bool ft5406ee8_read(lv_indev_data_t * data)
+bool ft5406ee8_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 {
     static int16_t x_last;
     static int16_t y_last;

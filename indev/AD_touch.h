@@ -23,14 +23,16 @@ extern "C" {
 
 #if USE_AD_TOUCH
 
+#ifdef LV_LVGL_H_INCLUDE_SIMPLE
+#include "lvgl.h"
+#else
+#include "lvgl/lvgl.h"
+#endif
+
 #define  _SUPPRESS_PLIB_WARNING
 #include <plib.h>
 
 #include "GenericTypeDefs.h"
-
-#include <stdint.h>
-#include <stdbool.h>
-#include "lvgl/src/lv_hal/lv_hal_indev.h"
 
 #define DISP_ORIENTATION    0
 #define DISP_HOR_RESOLUTION 320
@@ -106,7 +108,7 @@ extern "C" {
 #define TOUCHCAL_LRY 0x032D
 
 void ad_touch_init(void);
-bool ad_touch_read(lv_indev_data_t *data);
+bool ad_touch_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data);
 int16_t ad_touch_handler(void);
 
 #endif /* USE_AD_TOUCH */

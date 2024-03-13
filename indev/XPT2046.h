@@ -23,9 +23,11 @@ extern "C" {
 
 #if USE_XPT2046
 
-#include <stdint.h>
-#include <stdbool.h>
-#include "lvgl/src/lv_hal/lv_hal_indev.h"
+#ifdef LV_LVGL_H_INCLUDE_SIMPLE
+#include "lvgl.h"
+#else
+#include "lvgl/lvgl.h"
+#endif
 
 /*********************
  *      DEFINES
@@ -39,7 +41,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 void xpt2046_init(void);
-bool xpt2046_read(lv_indev_data_t * data);
+void xpt2046_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data);
 
 /**********************
  *      MACROS
